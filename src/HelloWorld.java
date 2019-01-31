@@ -14,6 +14,7 @@ public class HelloWorld {
 		message = message + "Hello World!";
 		message = message + "\n Hello Jonah Roesler!";
 		message = message + "\n Hello Alyssa Jia!";
+		message = message + "\n Hello Bogdan Bielka";
 		
 		JOptionPane.showMessageDialog(null, message, "Hello World App", JOptionPane.PLAIN_MESSAGE);
 	}
