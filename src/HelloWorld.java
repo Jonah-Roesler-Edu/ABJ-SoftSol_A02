@@ -13,6 +13,7 @@ public class HelloWorld {
 		String message = new String();
 		message = message + "Hello World!";
 		message = message + "\n Hello Jonah Roesler!";
+		message = message + "\n Hello Alyssa Jia!";
 		
 		JOptionPane.showMessageDialog(null, message, "Hello World App", JOptionPane.PLAIN_MESSAGE);
 	}
