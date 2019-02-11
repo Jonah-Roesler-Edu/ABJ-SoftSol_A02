@@ -14,17 +14,24 @@ public class Utilities {
 			success = false;
 		}
 		
+		//FILEPATH FOR SCHOOL
+		//String fileuser = "C:\\Users\\300281578\\eclipse-workspace\\Iteration01\\src\\iteration01\\usernames.txt";
 		
-		String fileuser = "C:\\Users\\300281578\\eclipse-workspace\\Iteration01\\src\\iteration01\\usernames.txt";
+		//FILEPATH FOR JONAH HOME
+		String fileuser = "C:\\Temp\\Eclipse-2018-12 workspace\\Iteration01\\src\\iteration01\\usernames.txt";
+		
 		///Iteration01/src/iteration01/usernames.txt
 		File nameListFile = new File(fileuser);
 		String line = null;
+		int nameLineNum = 0;
 		try {
 			FileInputStream fis = new FileInputStream(nameListFile);
 			InputStreamReader isr = new InputStreamReader(fis);
 			BufferedReader br = new BufferedReader(isr);
 			while((line = br.readLine()) != null)
 			{
+				nameLineNum++;
+				System.out.println("UN# " + nameLineNum);
 				if(username.equals(line))
 				{
 					user = true;
@@ -33,7 +40,9 @@ public class Utilities {
 				else {
 					user = false;
 				}
-			}br.close(); 
+				
+			}
+			br.close(); 
 			isr.close();
 			fis.close();
 		}
@@ -48,13 +57,16 @@ public class Utilities {
 	                + fileuser + "'");                  
 	        }
 		
-		/*String filepassw = "password.txt";
+		String filepassw = "C:\\Temp\\Eclipse-2018-12 workspace\\Iteration01\\src\\iteration01\\passwords.txt";
 		String line1 = null;
+		int passLineNum = 0;
 		try {
 			FileReader filereader1 = new FileReader(filepassw);
 			BufferedReader bufferedreader1 = new BufferedReader(filereader1);
 			while((line1 = bufferedreader1.readLine()) != null)
 			{
+				passLineNum++;
+				System.out.println("PW# " + passLineNum);
 				if(password.equals(line1))
 				{
 					passw = true;
@@ -68,35 +80,65 @@ public class Utilities {
 		 catch(FileNotFoundException ex) {
 	            System.out.println(
 	                "Unable to open file '" + 
-	                fileuser + "'");                
+	                filepassw + "'");                
 	        }
 	        catch(IOException ex) {
 	            System.out.println(
 	                "Error reading file '" 
-	                + fileuser + "'");                  
+	                + filepassw + "'");                  
 	        }
-		if(user == true && passw == true)
+		if(user == true && passw == true && nameLineNum == passLineNum)
 		{
 			success = true;	
 		}
 		return success;
-	}*/
-		if(user == true)
-		{
-			success = true;
-		}
-		return success;
 	}
 	
-	public static String ReadFile() {
-		String fileData = "read file failure";
-		
-		
-		
-		
-		
-		return fileData;
-	}
+		public static void writeAccount(String fName, String pass) {
+			//FILEPATH FOR JONAH HOME
+			String fileuser = "C:\\Temp\\Eclipse-2018-12 workspace\\Iteration01\\src\\iteration01\\usernames.txt";
+			
+			///Iteration01/src/iteration01/usernames.txt
+			File nameListFile = new File(fileuser);
+			
+			try {
+				//true = appendfile instead of overwrite
+				FileWriter fw = new FileWriter(nameListFile, true);
+				PrintWriter pw = new PrintWriter(fw);
+				
+				pw.println(fName);
+				System.out.println("New name entry " + fName);
+				
+				fw.close();
+				pw.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			
+			//FILEPATH FOR JONAH HOME
+			String filepassw = "C:\\Temp\\Eclipse-2018-12 workspace\\Iteration01\\src\\iteration01\\passwords.txt";
+			
+			///Iteration01/src/iteration01/usernames.txt
+			File passListFile = new File(filepassw);
+			
+			try {
+				//true = appendfile instead of overwrite
+				FileWriter fw = new FileWriter(passListFile, true);
+				PrintWriter pw = new PrintWriter(fw);
+				
+				pw.println(pass);
+				System.out.println("New pass entry " + pass);
+				
+				fw.close();
+				pw.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+		}
 	
 	
 	

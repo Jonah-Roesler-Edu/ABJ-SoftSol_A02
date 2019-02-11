@@ -15,7 +15,7 @@ public class HTML_Login {
 				"		<form method=\"post\">\r\n" + 
 				"			<fieldset>\r\n" + 
 				"				<legend>Login:</legend>\r\n" + 
-				"  				Email:<br>\r\n" + 
+				"  				username:<br>\r\n" + 
 				"  				<input type=\"text\" name=\"username\" value=\"\">\r\n" + 
 				"  				<br>\r\n" + 
 				"  				Password:<br>\r\n" + 

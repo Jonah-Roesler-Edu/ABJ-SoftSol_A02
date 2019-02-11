@@ -54,8 +54,9 @@ public class LoginPage extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		
 		String username = request.getParameter("username");
+		String password = request.getParameter("password");
 		
-		if(Utilities.verifyL(username, "doesnttmatter")) {
+		if(Utilities.verifyL(username, password)) {
 			out.println("Login Success");
 		} else {
 			out.println("test failure");

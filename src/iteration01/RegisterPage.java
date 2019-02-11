@@ -52,12 +52,16 @@ public class RegisterPage extends HttpServlet {
 		doGet(request, response);
 		PrintWriter out = response.getWriter();
 		
-		String username = request.getParameter("username");
+		String firstname = request.getParameter("firstname");
+		String lastname = request.getParameter("lastname");
+		String email = request.getParameter("email");
+		String password = request.getParameter("password");
 		
-		if(Utilities.verifyL(username, "doesnttmatter")) {
-			out.println("Login Success");
+		if(Utilities.verifyL(firstname, password)) {
+			out.println("You already have an account!");
 		} else {
-			out.println("test failure");
+			Utilities.writeAccount(firstname, password);
+			out.println("Account created!");
 		}
 		
 	}
