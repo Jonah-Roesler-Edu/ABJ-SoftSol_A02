@@ -20,6 +20,7 @@ public class HTML_Profile {
 				"	\r\n" + 
 				"		<a href=\"/Dynam_Hibernate_Prototype/login\"><button type=\"button\">to Login Page</button> </a>" + 
 				"		<input type = \"submit\" name = \"logout\" value = \"logout\"/>" +
+				"		<a href=\"/Dynam_Hibernate_Prototype/tasks\"><button type=\"button\">to Tasks</button> </a>" + 
 				"	</body>\r\n" + 
 				"</html>";
 		return profilePage;
