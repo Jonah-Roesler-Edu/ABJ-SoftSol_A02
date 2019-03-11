@@ -38,8 +38,8 @@ public class ProfilePage extends HttpServlet {
 		
 		Person profilePerson = NEWUtility.getProfile(email);
 		
-		out.println(profilePerson.toString());
-		
+		//out.println(profilePerson.toString());
+		out.println(HTML_Profile.writeProfile(profilePerson));
 		
 	}
 
@@ -50,10 +50,13 @@ public class ProfilePage extends HttpServlet {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 		
-		String req = request.getParameter("logout");
-		if (req != null) {
+		String reqLogout = request.getParameter("logout");
+		if (reqLogout != null) {
 			HttpSession session = request.getSession();
 			session.removeAttribute("username");
+			
+			PrintWriter out = response.getWriter();
+			out.println("loggedout");
 		}
 	}
 
