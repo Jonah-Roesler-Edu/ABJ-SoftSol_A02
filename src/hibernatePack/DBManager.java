@@ -32,7 +32,7 @@ public class DBManager {
 		}
 	
 		//CREATE
-	public void createPerson(Person newPerson) {
+	public void createEmployee(Employee newEmployee) {
 			//Declare Session Factory
 			SessionFactory fx = null;
 			//Declare Session
@@ -44,7 +44,7 @@ public class DBManager {
 			fx = getFactory();
 			sx = fx.openSession();
 			tx = sx.beginTransaction();
-			sx.save(newPerson);
+			sx.save(newEmployee);
 			tx.commit();
 			
 			sx.close();
@@ -61,7 +61,7 @@ public class DBManager {
 		}
 	}
 	
-	public Person readPerson (String email) {
+	public Employee readEmployee (String email) {
 		//Declare Session Factory
 		SessionFactory fx = null;
 		//Declare Session
@@ -69,7 +69,7 @@ public class DBManager {
 		//Declare Transaction
 		Transaction tx = null;
 
-		Person rPerson = null;
+		Employee rEmployee = null;
 		
 		try {
 			
@@ -77,7 +77,7 @@ public class DBManager {
 			sx = fx.openSession();
 			tx = sx.beginTransaction();
 			
-			rPerson = sx.get(Person.class, email);
+			rEmployee = sx.get(Employee.class, email);
 			tx.commit();
 			sx.close();
 			fx.close();
@@ -93,10 +93,10 @@ public class DBManager {
 			fx.close();
 		}
 		
-		return rPerson;
+		return rEmployee;
 	}
 	
-	public void updatePerson (Person uPerson) {
+	public void updateEmployee (Employee uEmployee) {
 		
 		//Declare Session Factory
 		SessionFactory fx = null;
@@ -112,7 +112,7 @@ public class DBManager {
 			tx = sx.beginTransaction();
 			
 			//Phone phone = (Phone)sx.get(Phone.class, uPhone.phoneID);
-			sx.update(uPerson);
+			sx.update(uEmployee);
 			//sx.update(object);
 			tx.commit();
 			sx.close();
@@ -130,7 +130,7 @@ public class DBManager {
 		}
 	}
 	
-	public List listPersons() {
+	public List listEmployees() {
 		
 		//Declare Session Factory
 		SessionFactory fx = null;
@@ -139,14 +139,14 @@ public class DBManager {
 		//Declare Transaction
 		Transaction tx = null;
 		
-		List<Person> personList = null;
+		List<Employee> employeeList = null;
 		
 		try {
 			fx = getFactory();
 			sx = fx.openSession();
 			tx = sx.beginTransaction();
 			
-			personList = sx.createQuery("from Person").list();
+			employeeList = sx.createQuery("from Employee").list();
 			
 			tx.commit();
 			sx.close();
@@ -163,7 +163,7 @@ public class DBManager {
 			fx.close();
 		}
 		
-		return personList;
+		return employeeList;
 	}
 	
 	

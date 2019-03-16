@@ -36,7 +36,7 @@ public class HibernateTest {
 //		}
 		
 		DBManager myDB = new DBManager();
-		Person newperson = myDB.readPerson("RonJerry@Gmail");
+		Employee newperson = myDB.readEmployee("RonJerry@Gmail");
 		
 		System.out.println(newperson);
 		

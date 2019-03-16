@@ -19,13 +19,19 @@ public class HTML_Register {
 				"  			Last Name:<br>\r\n" + 
 				"  			<input type=\"text\" name=\"lastname\" value=\"\">\r\n" + 
 				"  			<br>\r\n" + 
+				"  			Phone:<br>\r\n" + 
+				"  			<input type=\"text\" name=\"phone\" value=\"\">\r\n" + 
+				"  			<br>\r\n" + 
 				"  			Email:<br>\r\n" + 
 				"  			<input type=\"text\" name=\"email\" value=\"\">\r\n" + 
+				"  			<br>\r\n" + 
+				"  			Address:<br>\r\n" + 
+				"  			<input type=\"text\" name=\"address\" value=\"\">\r\n" + 
 				"  			<br>\r\n" + 
 				"  			Password:<br>\r\n" + 
 				"  			<input type=\"text\" name=\"password\" value=\"\">\r\n" + 
 				"  			<br><br>\r\n" + 
-				"  			<input type=\"submit\" value=\"Register\">\r\n" + 
+				"  			<input type=\"submit\" value=\"Register\">\r\n" +
 				"		</form> \r\n" + 
 				"		\r\n" + 
 				"		<br><br>\r\n" + 

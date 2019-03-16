@@ -56,9 +56,11 @@ public class RegisterPage extends HttpServlet {
 		String lastname = request.getParameter("lastname");
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
+		String address = request.getParameter("address");
+		String phone = request.getParameter("phone");
 		
 		//public static void writeProfile(String email, String fName, String lName,String pass)
-		NEWUtility.writeProfile(email, firstname, lastname, password);
+		NEWUtility.writeProfile(email, firstname, lastname, password, address, phone);
 		out.println("Account created!");
 		
 	}

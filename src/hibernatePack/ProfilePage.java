@@ -38,10 +38,10 @@ public class ProfilePage extends HttpServlet {
 		HttpSession session = request.getSession();
 		String email = (String) session.getAttribute("email");
 		
-		Person profilePerson = NEWUtility.getProfile(email);
+		Employee profileEmployee = NEWUtility.getProfile(email);
 		
 		//out.println(profilePerson.toString());
-		out.println(HTML_Profile.writeProfile(profilePerson));
+		out.println(HTML_Profile.writeProfile(profileEmployee));
 		
 	}
 
