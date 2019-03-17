@@ -22,7 +22,7 @@ public class HTML_Tasks {
 				"        </div>\r\n" + 
 				"        <div>\r\n" + 
 				"            <h2>Create a new task</h2>\r\n" + 
-				"            <form>\r\n" + 
+				"            <form method=\"post\">\r\n" + 
 				"            	<p>Task Assigned to</p>\r\n" + 
 				"            	<input type = \"text\" name = email>\r\n" + 
 				"            	<p>Task Desc</p>\r\n" + 
@@ -32,7 +32,7 @@ public class HTML_Tasks {
 				"	            <input type=\"submit\" name=\"create\" value=\"Create Task\">\r\n" + 
 				"            </form>\r\n" + 
 				"            <br>\r\n" + 
-				"            <a href = \"Dynam_Hibernate_Prototype/profile\"><button type = \"button\">Back to Profile</button></a>\r\n" + 
+				"            <a href=\"/Dynam_Hibernate_Prototype/profile\"><button type = \"button\">Back to Profile</button></a>\r\n" + 
 				"\r\n" + 
 				"        </div>\r\n" + 
 				"    </body>\r\n" + 

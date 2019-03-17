@@ -10,7 +10,7 @@ import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 
-public class DBManager {
+public class TaskDBManager {
 
 	public static SessionFactory getFactory() {
 
@@ -31,7 +31,7 @@ public class DBManager {
 	}
 
 	// CREATE
-	public void createEmployee(Employee newEmployee) {
+	public void createTask(Task newTask) {
 		// Declare Session Factory
 		SessionFactory fx = null;
 		// Declare Session
@@ -43,7 +43,7 @@ public class DBManager {
 			fx = getFactory();
 			sx = fx.openSession();
 			tx = sx.beginTransaction();
-			sx.save(newEmployee);
+			sx.save(newTask);
 			tx.commit();
 
 			sx.close();
@@ -60,42 +60,7 @@ public class DBManager {
 		}
 	}
 
-	public Employee readEmployee(String email) {
-		// Declare Session Factory
-		SessionFactory fx = null;
-		// Declare Session
-		Session sx = null;
-		// Declare Transaction
-		Transaction tx = null;
-
-		Employee rEmployee = null;
-
-		try {
-
-			fx = getFactory();
-			sx = fx.openSession();
-			tx = sx.beginTransaction();
-
-			rEmployee = sx.get(Employee.class, email);
-			tx.commit();
-			sx.close();
-			fx.close();
-		} catch (HibernateException e) {
-			if (tx != null) {
-				tx.rollback();
-			}
-			e.printStackTrace();
-		}
-
-		finally {
-			sx.close();
-			fx.close();
-		}
-
-		return rEmployee;
-	}
-
-	public void updateEmployee(Employee uEmployee) {
+	public List listCreatedTasks(String creatorEmail) {
 
 		// Declare Session Factory
 		SessionFactory fx = null;
@@ -104,46 +69,14 @@ public class DBManager {
 		// Declare Transaction
 		Transaction tx = null;
 
-		try {
-
-			fx = getFactory();
-			sx = fx.openSession();
-			tx = sx.beginTransaction();
-
-			// Phone phone = (Phone)sx.get(Phone.class, uPhone.phoneID);
-			sx.update(uEmployee);
-			// sx.update(object);
-			tx.commit();
-			sx.close();
-			fx.close();
-		} catch (HibernateException e) {
-			if (tx != null) {
-				tx.rollback();
-			}
-			e.printStackTrace();
-		} finally {
-			sx.close();
-			fx.close();
-		}
-	}
-
-	public List listEmployees() {
-
-		// Declare Session Factory
-		SessionFactory fx = null;
-		// Declare Session
-		Session sx = null;
-		// Declare Transaction
-		Transaction tx = null;
-
-		List<Employee> employeeList = null;
+		List<Task> taskList = null;
 
 		try {
 			fx = getFactory();
 			sx = fx.openSession();
 			tx = sx.beginTransaction();
 
-			employeeList = sx.createQuery("from Employee").list();
+			taskList = sx.createQuery("from Task t where t.creatorEmail = " + creatorEmail).list();
 
 			tx.commit();
 			sx.close();
@@ -158,7 +91,71 @@ public class DBManager {
 			fx.close();
 		}
 
-		return employeeList;
+		return taskList;
 	}
 
+	public List listAssignedTasks(String workerEmail) {
+
+		// Declare Session Factory
+		SessionFactory fx = null;
+		// Declare Session
+		Session sx = null;
+		// Declare Transaction
+		Transaction tx = null;
+
+		List<Task> taskList = null;
+
+		try {
+			fx = getFactory();
+			sx = fx.openSession();
+			tx = sx.beginTransaction();
+
+			taskList = sx.createQuery("from Task t where t.workerEmail = " + workerEmail).list();
+
+			tx.commit();
+			sx.close();
+			fx.close();
+		} catch (HibernateException e) {
+			if (tx != null) {
+				tx.rollback();
+			}
+			e.printStackTrace();
+		} finally {
+			sx.close();
+			fx.close();
+		}
+
+		return taskList;
+	}
+	
+	public void updateEmployee(Task uTask) {
+
+		// Declare Session Factory
+		SessionFactory fx = null;
+		// Declare Session
+		Session sx = null;
+		// Declare Transaction
+		Transaction tx = null;
+
+		try {
+
+			fx = getFactory();
+			sx = fx.openSession();
+			tx = sx.beginTransaction();
+
+			sx.update(uTask);
+			
+			tx.commit();
+			sx.close();
+			fx.close();
+		} catch (HibernateException e) {
+			if (tx != null) {
+				tx.rollback();
+			}
+			e.printStackTrace();
+		} finally {
+			sx.close();
+			fx.close();
+		}
+	}
 }

@@ -1,4 +1,5 @@
 package hibernatePack;
+import java.util.Date;
 import java.util.List;
 import hibernatePack.DBManager;
 
@@ -35,10 +36,25 @@ public class HibernateTest {
 //			System.out.println(p);
 //		}
 		
-		DBManager myDB = new DBManager();
-		Employee newperson = myDB.readEmployee("RonJerry@Gmail");
+//		DBManager myDB = new DBManager();
+//		Employee newperson = myDB.readEmployee("RonJerry@Gmail");
 		
-		System.out.println(newperson);
+//		System.out.println(newperson);
+		
+		
+		Task newTask = new Task();
+		newTask.setCreatorEmail("CreatorEmail");
+		Date newDate = new Date();
+		newTask.setDateAssign(newDate);
+		newTask.setDateDue("new date due");
+		newTask.setTaskText("Create a new task");
+		newTask.setWorkerEmail("Worker.email@org");
+		
+		TaskDBManager newDB = new TaskDBManager();
+		newDB.createTask(newTask);
+		
+		System.out.println(newTask);
+		
 		
 	}
 
