@@ -1,5 +1,6 @@
 package hibernatePack;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -20,8 +21,8 @@ public class Task {
 	public String taskText;
 	public String creatorEmail;
 	public String workerEmail;
-	public String dateDue;
-	public Date dateAssign;
+	public LocalDateTime dateDue;
+	public LocalDateTime dateAssign;
 	
 	
 	public String getCreator() {
@@ -45,17 +46,17 @@ public class Task {
 		taskText = _task;
 	}
 	
-	public String getDateDue() {
+	public LocalDateTime getDateDue() {
 		return dateDue;
 	}
-	public void setDateDue(String _Date) {
+	public void setDateDue(LocalDateTime _Date) {
 		dateDue = _Date;
 	}
 	
-	public Date getDateAssign() {
+	public LocalDateTime getDateAssign() {
 		return dateAssign;
 	}
-	public void setDateAssign(Date _Date) {
+	public void setDateAssign(LocalDateTime _Date) {
 		dateAssign = _Date;
 	}
 	

@@ -1,6 +1,13 @@
 package hibernatePack;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
+
 import hibernatePack.DBManager;
 
 public class HibernateTest {
@@ -41,19 +48,39 @@ public class HibernateTest {
 		
 //		System.out.println(newperson);
 		
+//		
+//		Task newTask = new Task();
+//		newTask.setCreatorEmail("CreatorEmail");
+//		Date newDate = new Date();
+//		newTask.setDateAssign(newDate);
+//		newTask.setDateDue("new date due");
+//		newTask.setTaskText("Create a new task");
+//		newTask.setWorkerEmail("Worker.email@org");
+//		
+//		TaskDBManager newDB = new TaskDBManager();
+//		newDB.createTask(newTask);
+//		
+//		System.out.println(newTask);
+//	
+//		Date newDate = new Date();
+//		
+//		String newStringDate = newDate.toString();
+//		String parsenewDate = DateFormat.parse("hh:mm:ss zzz yyyy");
+//
+//		DateFormat df = new SimpleDateFormat("hh:mm:ss zzz yyyy", Locale);
+//		Date parseDate = new Date();
+//		try {
+//			parseDate = df.parse(newStringDate);
+//		} catch (ParseException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 		
-		Task newTask = new Task();
-		newTask.setCreatorEmail("CreatorEmail");
-		Date newDate = new Date();
-		newTask.setDateAssign(newDate);
-		newTask.setDateDue("new date due");
-		newTask.setTaskText("Create a new task");
-		newTask.setWorkerEmail("Worker.email@org");
+		LocalDateTime ldt = LocalDateTime.now();
+		LocalDateTime ldt2 = LocalDateTime.parse("2019-03-19T12:12");
+		ldt2.getDayOfMonth();
 		
-		TaskDBManager newDB = new TaskDBManager();
-		newDB.createTask(newTask);
-		
-		System.out.println(newTask);
+		System.out.println(ldt2);
 		
 		
 	}

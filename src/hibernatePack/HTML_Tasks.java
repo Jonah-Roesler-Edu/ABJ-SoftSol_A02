@@ -28,7 +28,7 @@ public class HTML_Tasks {
 				"            	<p>Task Desc</p>\r\n" + 
 				"                <input type=\"text\" name=\"txtTask\">\r\n" + 
 				"                <p>Due Date</p>\r\n" + 
-				"	            <input type=\"datetime-local\">\r\n" + 
+				"	            <input type=\"datetime-local\" name = \"dueDate\">\r\n" + 
 				"	            <input type=\"submit\" name=\"create\" value=\"Create Task\">\r\n" + 
 				"            </form>\r\n" + 
 				"            <br>\r\n" + 

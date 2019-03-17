@@ -1,5 +1,7 @@
 package hibernatePack;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.List;
 
@@ -42,10 +44,14 @@ public class NEWUtility {
 		newTask.setCreatorEmail(creatorEmail);
 		newTask.setWorkerEmail(workerEmail);
 		newTask.setTaskText(txtTask);
-		newTask.setDateDue(dueDate);
 		
-		Date newDate = new Date();
-		newTask.setDateAssign(newDate);
+		//DateTimeFormatter format = DateTimeFormatter.ISO_DATE_TIME;
+		LocalDateTime pDueDate = LocalDateTime.parse(dueDate);
+		newTask.setDateDue(pDueDate);
+		
+		LocalDateTime assignDate = LocalDateTime.now();
+		
+		newTask.setDateAssign(assignDate);
 		
 		TaskDBManager newDB = new TaskDBManager();
 		newDB.createTask(newTask);

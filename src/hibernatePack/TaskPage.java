@@ -2,6 +2,7 @@ package hibernatePack;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Date;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -32,6 +33,10 @@ public class TaskPage extends HttpServlet {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		PrintWriter out = response.getWriter();
+		
+		
+		
+		
 		out.println(HTML_Tasks.writeTasks());
 	}
 
@@ -49,6 +54,7 @@ public class TaskPage extends HttpServlet {
 		String workerEmail = request.getParameter("email");
 		String taskDesc = request.getParameter("txtTask");
 		String dueDate = request.getParameter("dueDate");
+
 		
 		NEWUtility.createTask(email, workerEmail, dueDate, taskDesc);
 	}
