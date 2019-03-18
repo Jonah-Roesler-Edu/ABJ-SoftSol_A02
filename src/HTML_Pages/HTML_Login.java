@@ -29,8 +29,8 @@ public class HTML_Login {
 				"		\r\n" + 
 				"		<br><br>\r\n" + 
 				"		<a href=\"/Dynam_Hibernate_Prototype/register\"><button type=\"button\">Register</button> </a>\r\n" + 
-				"		<br><br>\r\n" + 
-				"		<a href=\"/Dynam_Hibernate_Prototype/profile\"><button type=\"button\">To Profile Page</button> </a>\r\n" + 
+//				"		<br><br>\r\n" + 
+//				"		<a href=\"/Dynam_Hibernate_Prototype/profile\"><button type=\"button\">To Profile Page</button> </a>\r\n" + 
 				"	</body>\r\n" + 
 				"</html>\r\n";
 		

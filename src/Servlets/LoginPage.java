@@ -64,8 +64,11 @@ public class LoginPage extends HttpServlet {
 			HttpSession session = request.getSession();
 			session.setAttribute("email", email);
 			
+			response.sendRedirect("profile");
+			
+			
 		} else {
-			out.println("test failure");
+			out.println("Login failure");
 		}
 		
 	}
