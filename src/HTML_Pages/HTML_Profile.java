@@ -1,4 +1,6 @@
-package hibernatePack;
+package HTML_Pages;
+
+import hibernatePack.Employee;
 
 public class HTML_Profile {
 	public static String writeProfile(Employee newEmployee) {

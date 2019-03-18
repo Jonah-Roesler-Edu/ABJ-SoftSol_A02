@@ -3,7 +3,7 @@
   <display-name>Dynam_Hibernate_Prototype</display-name>
   <servlet>
     <servlet-name>TestServlet</servlet-name>
-    <servlet-class>hibernatePack.testServlet</servlet-class>
+    <servlet-class>Servlets.testServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>TestServlet</servlet-name>
@@ -11,7 +11,7 @@
   </servlet-mapping>
   <servlet>
     <servlet-name>LoginPage</servlet-name>
-    <servlet-class>hibernatePack.LoginPage</servlet-class>
+    <servlet-class>Servlets.LoginPage</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>LoginPage</servlet-name>
@@ -19,7 +19,7 @@
   </servlet-mapping>
   <servlet>
     <servlet-name>RegisterPage</servlet-name>
-    <servlet-class>hibernatePack.RegisterPage</servlet-class>
+    <servlet-class>Servlets.RegisterPage</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>RegisterPage</servlet-name>
@@ -27,7 +27,7 @@
   </servlet-mapping>
   <servlet>
     <servlet-name>ProfilePage</servlet-name>
-    <servlet-class>hibernatePack.ProfilePage</servlet-class>
+    <servlet-class>Servlets.ProfilePage</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>ProfilePage</servlet-name>
@@ -35,7 +35,7 @@
   </servlet-mapping>
   <servlet>
     <servlet-name>TaskPage</servlet-name>
-    <servlet-class>hibernatePack.TaskPage</servlet-class>
+    <servlet-class>Servlets.TaskPage</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>TaskPage</servlet-name>

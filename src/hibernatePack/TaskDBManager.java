@@ -1,6 +1,9 @@
 package hibernatePack;
 
 import java.util.List;
+
+import javax.persistence.Query;
+
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -75,8 +78,11 @@ public class TaskDBManager {
 			fx = getFactory();
 			sx = fx.openSession();
 			tx = sx.beginTransaction();
-
-			taskList = sx.createQuery("from Task t where t.creatorEmail = " + creatorEmail).list();
+			
+			Query newQuery = sx.createQuery("from Task where creatorEmail = :email");
+			newQuery.setParameter("email", creatorEmail);
+			
+			taskList = newQuery.getResultList();
 
 			tx.commit();
 			sx.close();
@@ -94,6 +100,9 @@ public class TaskDBManager {
 		return taskList;
 	}
 
+	
+	
+	//+ "'" + workerEmail + "'"
 	public List listAssignedTasks(String workerEmail) {
 
 		// Declare Session Factory
@@ -109,8 +118,11 @@ public class TaskDBManager {
 			fx = getFactory();
 			sx = fx.openSession();
 			tx = sx.beginTransaction();
-
-			taskList = sx.createQuery("from Task t where t.workerEmail = " + workerEmail).list();
+			
+			Query newQuery = sx.createQuery("from Task where workerEmail = :email");
+			newQuery.setParameter("email", workerEmail);
+			
+			taskList = newQuery.getResultList();
 
 			tx.commit();
 			sx.close();

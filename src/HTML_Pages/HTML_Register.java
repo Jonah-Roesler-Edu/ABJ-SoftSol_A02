@@ -1,4 +1,4 @@
-package hibernatePack;
+package HTML_Pages;
 
 public class HTML_Register {
 	public static String writeHead() {

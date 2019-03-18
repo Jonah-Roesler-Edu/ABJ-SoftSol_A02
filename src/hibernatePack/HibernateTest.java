@@ -76,12 +76,24 @@ public class HibernateTest {
 //			e.printStackTrace();
 //		}
 		
-		LocalDateTime ldt = LocalDateTime.now();
-		LocalDateTime ldt2 = LocalDateTime.parse("2019-03-19T12:12");
-		ldt2.getDayOfMonth();
+//		LocalDateTime ldt = LocalDateTime.now();
+//		LocalDateTime ldt2 = LocalDateTime.parse("2019-03-19T12:12");
+//		ldt2.getDayOfMonth();
+//		
+//		System.out.println(ldt2);
 		
-		System.out.println(ldt2);
+		//List newList = TaskUtility.getCreatedBy("Hello");
+		List newList = TaskUtility.getAssignedTasks("abcd");
+		if(newList.isEmpty()) {
+			System.out.println("No created tasks");
+			Object[] newArrList = newList.toArray();
+			System.out.println(newArrList.length);
+		}
+		else {
+			System.out.println(newList);
+		}
 		
+
 		
 	}
 

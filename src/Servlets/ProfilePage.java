@@ -1,27 +1,32 @@
-package hibernatePack;
+package Servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Date;
-
+// added one more import statement
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.swing.text.Utilities;
+
+import HTML_Pages.HTML_Profile;
+import hibernatePack.Employee;
+import hibernatePack.PersonUtility;
 
 /**
- * Servlet implementation class TaskPage
+ * Servlet implementation class ProfilePage
  */
-@WebServlet("/TaskPage")
-public class TaskPage extends HttpServlet {
+@WebServlet("/ProfilePage")
+public class ProfilePage extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public TaskPage() {
+    public ProfilePage() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -34,10 +39,14 @@ public class TaskPage extends HttpServlet {
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		PrintWriter out = response.getWriter();
 		
+		HttpSession session = request.getSession();
+		String email = (String) session.getAttribute("email");
 		
+		Employee profileEmployee = PersonUtility.getProfile(email);
 		
+		//out.println(profilePerson.toString());
+		out.println(HTML_Profile.writeProfile(profileEmployee));
 		
-		out.println(HTML_Tasks.writeTasks());
 	}
 
 	/**
@@ -46,17 +55,15 @@ public class TaskPage extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
-		System.out.println("CREATING TASK");
 		
-		HttpSession session = request.getSession();
-		String email = (String) session.getAttribute("email");
-		
-		String workerEmail = request.getParameter("email");
-		String taskDesc = request.getParameter("txtTask");
-		String dueDate = request.getParameter("dueDate");
-
-		
-		NEWUtility.createTask(email, workerEmail, dueDate, taskDesc);
+		String reqLogout = request.getParameter("logout");
+		if (reqLogout != null) {
+			HttpSession session = request.getSession();
+			session.removeAttribute("username");
+			
+			PrintWriter out = response.getWriter();
+			out.println("loggedout");
+		}
 	}
 
 }

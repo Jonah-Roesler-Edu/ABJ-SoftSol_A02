@@ -1,4 +1,4 @@
-package hibernatePack;
+package HTML_Pages;
 
 public class HTML_Login {
 	public static String writeHead() {

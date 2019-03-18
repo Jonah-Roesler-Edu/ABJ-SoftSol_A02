@@ -1,4 +1,4 @@
-package hibernatePack;
+package Servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -9,20 +9,21 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import javax.swing.text.Utilities;
+
+import HTML_Pages.HTML_Register;
+import hibernatePack.PersonUtility;
 
 /**
- * Servlet implementation class LoginPage
+ * Servlet implementation class RegisterPage
  */
-@WebServlet("/LoginPage")
-public class LoginPage extends HttpServlet {
+@WebServlet("/RegisterPage")
+public class RegisterPage extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+    
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public LoginPage() {
+    public RegisterPage() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -42,7 +43,7 @@ public class LoginPage extends HttpServlet {
 		//response.getWriter().append("Served at: LoginPage.java").append(request.getContextPath());
 		
 		PrintWriter out = response.getWriter();
-		out.println(HTML_Login.writeHead());
+		out.println(HTML_Register.writeHead());
 		
 	}
 
@@ -54,18 +55,16 @@ public class LoginPage extends HttpServlet {
 		doGet(request, response);
 		PrintWriter out = response.getWriter();
 		
+		String firstname = request.getParameter("firstname");
+		String lastname = request.getParameter("lastname");
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
+		String address = request.getParameter("address");
+		String phone = request.getParameter("phone");
 		
-		if(NEWUtility.verifyLogin(email, password)) {
-			out.println("Login Success");
-			HttpSession session = request.getSession();
-			session.setAttribute("email", email);
-			
-		} else {
-			out.println("test failure");
-		}
+		//public static void writeProfile(String email, String fName, String lName,String pass)
+		PersonUtility.writeProfile(email, firstname, lastname, password, address, phone);
+		out.println("Account created!");
 		
 	}
-
 }
