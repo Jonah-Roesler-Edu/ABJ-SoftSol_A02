@@ -1,5 +1,6 @@
 package Servlets;
 
+
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -10,10 +11,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import javax.swing.text.Utilities;
-
 import HTML_Pages.HTML_Login;
-import hibernatePack.PersonUtility;
+import hibernatePack.EmpUtility;
 
 /**
  * Servlet implementation class LoginPage
@@ -60,8 +59,8 @@ public class LoginPage extends HttpServlet {
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
 		
-		if(PersonUtility.verifyLogin(email, password)) {
-			out.println("Login Success");
+		if(EmpUtility.verifyLogin(email, password)) {
+			//out.println("Login Success");
 			HttpSession session = request.getSession();
 			session.setAttribute("email", email);
 			

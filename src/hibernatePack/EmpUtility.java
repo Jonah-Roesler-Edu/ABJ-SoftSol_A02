@@ -5,7 +5,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.List;
 
-public class PersonUtility {
+public class EmpUtility {
 	
 	public static boolean verifyLogin(String email, String pass) {
 		DBManager myDB = new DBManager();

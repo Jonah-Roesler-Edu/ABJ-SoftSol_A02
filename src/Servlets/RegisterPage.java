@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import HTML_Pages.HTML_Register;
-import hibernatePack.PersonUtility;
+import hibernatePack.EmpUtility;
 
 /**
  * Servlet implementation class RegisterPage
@@ -63,7 +63,7 @@ public class RegisterPage extends HttpServlet {
 		String phone = request.getParameter("phone");
 		
 		//public static void writeProfile(String email, String fName, String lName,String pass)
-		PersonUtility.writeProfile(email, firstname, lastname, password, address, phone);
+		EmpUtility.writeProfile(email, firstname, lastname, password, address, phone);
 		out.println("Account created!");
 		
 	}

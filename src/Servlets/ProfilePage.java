@@ -2,19 +2,15 @@ package Servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-// added one more import statement
-import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import javax.swing.text.Utilities;
-
 import HTML_Pages.HTML_Profile;
+import hibernatePack.EmpUtility;
 import hibernatePack.Employee;
-import hibernatePack.PersonUtility;
 
 /**
  * Servlet implementation class ProfilePage
@@ -42,7 +38,7 @@ public class ProfilePage extends HttpServlet {
 		HttpSession session = request.getSession();
 		String email = (String) session.getAttribute("email");
 		
-		Employee profileEmployee = PersonUtility.getProfile(email);
+		Employee profileEmployee = EmpUtility.getProfile(email);
 		
 		//out.println(profilePerson.toString());
 		out.println(HTML_Profile.writeProfile(profileEmployee));
@@ -55,14 +51,11 @@ public class ProfilePage extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
+		HttpSession session = request.getSession();
 		
-		String reqLogout = request.getParameter("logout");
-		if (reqLogout != null) {
-			HttpSession session = request.getSession();
-			session.removeAttribute("username");
-			
-			PrintWriter out = response.getWriter();
-			out.println("loggedout");
+		if(request.getParameter("logout") != null )
+		{  
+		  session.invalidate();
 		}
 	}
 

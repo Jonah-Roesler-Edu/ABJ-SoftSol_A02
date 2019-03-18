@@ -17,11 +17,13 @@ public class HTML_Profile {
 				"	<body>\r\n" + 
 				"	<h2>Profile Page</h2>\r\n" + 
 				"	<p name = \"name\">" + "Name: " + newEmployee.getFName() + " " + newEmployee.getLName() +  "</p>\r\n" + 
-				"	<p name = \"password\"> " + "Password: " + newEmployee.getPass() + " </p>\r\n" + 
+				"	<p name = \"phone\"> " + "Phone: " + newEmployee.getPhone() + " </p>\r\n" + 
 				"	<p name = \"email\"> " + "Email: " + newEmployee.getEmail() + "</p>\r\n" + 
+				"	<p name = \"address\"> " + "Address: " + newEmployee.getAddress() + "</p>\r\n" + 
 				"	\r\n" + 
-				"		<a href=\"/Dynam_Hibernate_Prototype/login\"><button type=\"button\">to Login Page</button> </a>" + 
-				"		<input type = \"submit\" name = \"logout\" value = \"logout\"/>" +
+				//"		<a href=\"/Dynam_Hibernate_Prototype/login\"><button type=\"button\">Logout</button> </a>" + 
+				"		<a href=\"/Dynam_Hibernate_Prototype/login\">" +
+				"		<input type = \"submit\" name = \"logout\" value = \"logout\"/></a>" +
 				"		<a href=\"/Dynam_Hibernate_Prototype/tasks\"><button type=\"button\">to Tasks</button> </a>" + 
 				"	</body>\r\n" + 
 				"</html>";
