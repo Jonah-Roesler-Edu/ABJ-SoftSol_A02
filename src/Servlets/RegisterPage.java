@@ -62,18 +62,7 @@ public class RegisterPage extends HttpServlet {
 		String address = request.getParameter("address");
 		String phone = request.getParameter("phone");
 		
-		//public static void writeProfile(String email, String fName, String lName,String pass)
-		if(request.getParameter("Register") != null )
-		{  
-			EmpUtility.writeProfile(email, firstname, lastname, password, address, phone);
-			out.println("Account created!");
-		}
-		/*EmpUtility.writeProfile(email, firstname, lastname, password, address, phone);
-		out.println("Account created!");*/
-		
-		if(request.getParameter("log") != null )
-		{  
-		  response.sendRedirect("login");
-		}
+		EmpUtility.writeProfile(email, firstname, lastname, password, address, phone);
+		out.println("Account created!");
 	}
 }

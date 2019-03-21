@@ -31,7 +31,7 @@ public class HTML_Register {
 				"  			Password:<br>\r\n" + 
 				"  			<input type=\"text\" name=\"password\" value=\"\">\r\n" + 
 				"  			<br><br>\r\n" + 
-				"  			<input type=\"submit\" name=\"register\" value=\"Register\">\r\n" +
+				"  			<input type=\"submit\" value=\"Register\">\r\n" +
 				"		</form> \r\n" + 
 				"		\r\n" + 
 				"		<br><br>\r\n" + 
