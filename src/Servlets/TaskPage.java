@@ -68,9 +68,14 @@ public class TaskPage extends HttpServlet {
 		String workerEmail = request.getParameter("email");
 		String taskDesc = request.getParameter("txtTask");
 		String dueDate = request.getParameter("dueDate");
-
+		String id = request.getParameter("id");
 		
 		TaskUtility.createTask(email, workerEmail, dueDate, taskDesc);
+		
+		if(request.getParameter("complete") != null )
+		{  
+			//session.setAttribute("email", email);
+		}
 	}
 
 }

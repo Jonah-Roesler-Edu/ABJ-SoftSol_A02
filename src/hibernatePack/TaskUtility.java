@@ -18,6 +18,9 @@ public class TaskUtility {
 		
 		newTask.setDateAssign(assignDate);
 		
+		String defaultStatus = "Not Completed";
+		newTask.setStatus(defaultStatus);
+		
 		TaskDBManager newDB = new TaskDBManager();
 		newDB.createTask(newTask);
 		

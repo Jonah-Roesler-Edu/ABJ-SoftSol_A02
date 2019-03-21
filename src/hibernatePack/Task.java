@@ -23,7 +23,11 @@ public class Task {
 	public String workerEmail;
 	public LocalDateTime dateDue;
 	public LocalDateTime dateAssign;
+	public String status;
 	
+	public long getId() {
+		return id;
+	}
 	
 	public String getCreator() {
 		return creatorEmail;
@@ -60,6 +64,13 @@ public class Task {
 		dateAssign = _Date;
 	}
 	
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String _Status) {
+		status = _Status;
+	}
+	
 	@Override
 	public String toString() {
 	StringBuilder newString = new StringBuilder();
@@ -67,7 +78,8 @@ public class Task {
 	newString.append("creator: " + creatorEmail + " || ");
 	newString.append("Assign to: " + workerEmail + " || ");
 	newString.append("Assign date: " + dateAssign + " || ");
-	newString.append("Due Date: " + dateDue);
+	newString.append("Due Date: " + dateDue + " || ");
+	newString.append("Status: " + status);
 	newString.append("-----------");
 	return newString.toString();
 	}

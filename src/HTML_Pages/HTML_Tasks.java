@@ -30,6 +30,7 @@ public class HTML_Tasks {
 				"        <th>Assigned on</th>\r\n" + 
 				"        <th>Due Date</th>\r\n" + 
 				"        <th>Description</th>\r\n" + 
+				"		 <th>Completion Status</th>\r\n" + 
 				"    </tr>");
 		for(Object newTask : createdTasks) {
 			//((Task) newTask).getCreator()
@@ -39,6 +40,7 @@ public class HTML_Tasks {
 					"        <td>" + ((Task) newTask).getDateAssign() + "</td>\r\n" + 
 					"        <td>"+ ((Task) newTask).getDateDue() + "</td>\r\n" + 
 					"        <td>"+ ((Task) newTask).getTaskText() + "</td>\r\n" + 
+					"        <td>"+ ((Task) newTask).getStatus() + "</td>\r\n" + 
 					"    </tr>");
 		}
 		tt.append("</Table>");
@@ -56,25 +58,33 @@ public class HTML_Tasks {
 		
 		tt.append("<Table>");
 		tt.append("    <tr>\r\n" + 
+				"        <th>Task Id</th>\r\n" + 
 				"        <th>Created By</th>\r\n" + 
 				"        <th>Assigned to:</th>\r\n" +
 				"        <th>Assigned on</th>\r\n" + 
 				"        <th>Due Date</th>\r\n" + 
 				"        <th>Description</th>\r\n" + 
+				"		 <th>Completion Status</th>\r\n" + 
 				"    </tr>");
 		for(Object newTask : assignedTasks) {
 			//((Task) newTask).getCreator()
 			tt.append("    <tr>\r\n" + 
+					"        <td>"+ ((Task) newTask).getId() +"</td>\r\n" + 
 					"        <td>"+ ((Task) newTask).getCreator() +"</td>\r\n" + 
 					"        <td>" + ((Task) newTask).getWorker() + "</td>\r\n" + 
 					"        <td>" + ((Task) newTask).getDateAssign() + "</td>\r\n" + 
 					"        <td>"+ ((Task) newTask).getDateDue() + "</td>\r\n" + 
 					"        <td>"+ ((Task) newTask).getTaskText() + "</td>\r\n" + 
+					"        <td>"+ ((Task) newTask).getStatus() + "</td>\r\n" + 
 					"    </tr>");
 		}
 		tt.append("</Table>");
 		tt.append("            <br>\r\n" + 
-				"            <input type=\"button\" name=\"complete\" value=\"Task Completed\">\r\n" + 
+				"			<form method=\"post\">\r\n" +
+				"            	<p>Id of Task to Change Status</p>\r\n" + 
+				"				<input type = \"text\" name = id>" +
+				"           	<input type=\"button\" name=\"complete\" value=\"Task Completed\">\r\n" +
+				"			</form>" +
 				"        </div>\r\n" );
 		
 		return tt.toString();
