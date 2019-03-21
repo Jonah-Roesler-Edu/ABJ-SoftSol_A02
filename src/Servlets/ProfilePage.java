@@ -56,6 +56,11 @@ public class ProfilePage extends HttpServlet {
 		if(request.getParameter("logout") != null )
 		{  
 		  session.invalidate();
+		  response.sendRedirect("login");
+		}
+		if(request.getParameter("task") != null )
+		{  
+		  response.sendRedirect("tasks");
 		}
 	}
 

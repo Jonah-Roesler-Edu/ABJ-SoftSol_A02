@@ -12,7 +12,6 @@ public class HTML_Login {
 				"	<body>\r\n" + 
 				"		<h2>Login</h2>\r\n" + 
 				"		\r\n" + 
-				//"		<form method=\"post\" action=\"/Dynam_Hibernate_Prototype/profile\">\r\n" + 
 				"		<form method=\"post\">\r\n" + 
 				"			<fieldset>\r\n" + 
 				"				<legend>Login:</legend>\r\n" + 
@@ -21,16 +20,15 @@ public class HTML_Login {
 				"  				<br>\r\n" + 
 				"  				Password:<br>\r\n" + 
 				"  				<input type=\"text\" name=\"password\" value=\"\">\r\n" + 
-				"  				<br><br>\r\n" + 
-				"  				<a href=\"/Dynam_Hibernate_Prototype/register\">" + 				
-				"				<input type=\"submit\" value=\"Login\" name = \"submit\"></a>\r\n" + 
+				"  				<br><br>\r\n" + 				
+				"				<input type=\"submit\" value=\"Login\" name = \"submit\">\r\n" + 
 				"  			</fieldset>\r\n" + 
 				"		</form> \r\n" + 
 				"		\r\n" + 
 				"		<br><br>\r\n" + 
-				"		<a href=\"/Dynam_Hibernate_Prototype/register\"><button type=\"button\">Register</button> </a>\r\n" + 
-//				"		<br><br>\r\n" + 
-//				"		<a href=\"/Dynam_Hibernate_Prototype/profile\"><button type=\"button\">To Profile Page</button> </a>\r\n" + 
+				//"		<form method=\"post\">" +
+				"			<a href=\"/Dynam_Hibernate_Prototype/register\"><input type=\"submit\" name = \"reg\" value=\"Register\"></a>\r\n" + 
+				//"		</form>" +
 				"	</body>\r\n" + 
 				"</html>\r\n";
 		

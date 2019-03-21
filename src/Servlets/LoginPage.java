@@ -65,12 +65,13 @@ public class LoginPage extends HttpServlet {
 			session.setAttribute("email", email);
 			
 			response.sendRedirect("profile");
-			
-			
 		} else {
 			out.println("Login failure");
 		}
-		
+		if(request.getParameter("reg") != null )
+		{  
+		  response.sendRedirect("register");
+		}
 	}
 
 }
