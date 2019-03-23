@@ -140,7 +140,7 @@ public class TaskDBManager {
 		return taskList;
 	}
 	
-	public void updateEmployee(Task uTask) {
+	public void updateTask(Task uTask) {
 
 		// Declare Session Factory
 		SessionFactory fx = null;
@@ -154,7 +154,10 @@ public class TaskDBManager {
 			fx = getFactory();
 			sx = fx.openSession();
 			tx = sx.beginTransaction();
-
+			
+			/*Query newQuery = sx.createQuery("from Task where uTask = :id");
+			newQuery.setParameter("id", workerEmail);*/
+			
 			sx.update(uTask);
 			
 			tx.commit();

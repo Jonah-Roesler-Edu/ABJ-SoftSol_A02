@@ -73,7 +73,7 @@ public class TaskPage extends HttpServlet {
 		
 		if(request.getParameter("complete") != null )
 		{  
-			//session.setAttribute("email", email);
+			TaskUtility.updateTaskStatus(id);
 		}
 		if(request.getParameter("profile") != null) {
 			response.sendRedirect("profile");

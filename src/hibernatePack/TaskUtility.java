@@ -25,6 +25,16 @@ public class TaskUtility {
 		newDB.createTask(newTask);
 		
 	}
+	public static void updateTaskStatus(String taskId) {
+		Task updateTask = new Task();
+		
+		String status = "Complete";
+		updateTask.setStatus(status);
+		
+		TaskDBManager newDB = new TaskDBManager();
+		newDB.updateTask(updateTask);
+		
+	}
 	
 	public static List getCreatedBy(String email) {
 		TaskDBManager taskDB = new TaskDBManager();
