@@ -68,10 +68,10 @@ public class LoginPage extends HttpServlet {
 		} else {
 			out.println("Login failure");
 		}
-		if(request.getParameter("reg") != null )
+		/*if(request.getParameter("reg") != null )
 		{  
-		  response.sendRedirect("register");
-		}
+		 response.sendRedirect("register");
+		}*/
 	}
 
 }
