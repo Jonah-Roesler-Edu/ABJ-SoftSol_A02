@@ -2,7 +2,6 @@ package Servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Date;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -13,8 +12,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import HTML_Pages.HTML_Tasks;
-import hibernatePack.EmpUtility;
-import hibernatePack.Task;
 import hibernatePack.TaskUtility;
 
 /**

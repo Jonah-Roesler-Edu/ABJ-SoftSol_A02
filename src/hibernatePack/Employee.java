@@ -13,9 +13,9 @@ public class Employee {
 	@Id
 	public String email;
 	
-	public String fName;
-	public String lName;
-	public String pass;
+	public String firstName;
+	public String lastName;
+	public String password;
 	public String phone;
 	public String address;
 	
@@ -27,24 +27,24 @@ public class Employee {
 	}
 	
 	public String getFName() {
-		return fName;
+		return firstName;
 	}
 	public void setFName(String _FName) {
-		fName = _FName;
+		firstName = _FName;
 	}
 	
 	public String getLName() {
-		return lName;
+		return lastName;
 	}
 	public void setLName(String _LName) {
-		lName = _LName;
+		lastName = _LName;
 	}
 	
 	public String getPass() {
-		return pass;
+		return password;
 	}
 	public void setPass(String _Pass) {
-		pass = _Pass;
+		password = _Pass;
 	}
 	
 	public String getPhone() {
@@ -64,7 +64,7 @@ public class Employee {
 	public String toString() {
 	return "Person{Email:" + getEmail()
 	+ ";Name: " + getFName() + " " + getLName()
-	+ ";Pass:" + getPass()
+	+ ";Password:" + getPass()
 	+ ";Address:" + getAddress()
 	+ ";Phone:" + getPhone() + "}";
 	}
