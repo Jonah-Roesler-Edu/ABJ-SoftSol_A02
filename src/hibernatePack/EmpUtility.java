@@ -36,30 +36,13 @@ public class EmpUtility {
 		myDB.createEmployee(newEmployee);
 	}
 	
-	
-	//TASKS UTILITY ================================
-	
-	public static void createTask(String creatorEmail, String workerEmail, String dueDate, String txtTask) {
-		Task newTask = new Task();
-		newTask.setCreatorEmail(creatorEmail);
-		newTask.setWorkerEmail(workerEmail);
-		newTask.setTaskText(txtTask);
-		
-		//DateTimeFormatter format = DateTimeFormatter.ISO_DATE_TIME;
-		LocalDateTime pDueDate = LocalDateTime.parse(dueDate);
-		newTask.setDateDue(pDueDate);
-		
-		LocalDateTime assignDate = LocalDateTime.now();
-		
-		newTask.setDateAssign(assignDate);
-		
-		TaskDBManager newDB = new TaskDBManager();
-		newDB.createTask(newTask);
-		
+	public static void deleteProfile(String email, String pass) {
+		Employee dEmployee = EmpUtility.getProfile(email);
+		if(dEmployee.getPass().equals(pass)) {
+			DBManager myDB = new DBManager();
+			myDB.del
+		}
 	}
 	
-	public static List getCreatedBy(String email) {
-		TaskDBManager taskDB = new TaskDBManager();
-		return taskDB.listCreatedTasks(email);
-	}
+	
 }

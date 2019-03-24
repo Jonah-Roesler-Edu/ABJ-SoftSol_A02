@@ -83,15 +83,8 @@ public class HibernateTest {
 //		System.out.println(ldt2);
 		
 		//List newList = TaskUtility.getCreatedBy("Hello");
-		List newList = TaskUtility.getAssignedTasks("abcd");
-		if(newList.isEmpty()) {
-			System.out.println("No created tasks");
-			Object[] newArrList = newList.toArray();
-			System.out.println(newArrList.length);
-		}
-		else {
-			System.out.println(newList);
-		}
+		
+TaskUtility.
 		
 
 		

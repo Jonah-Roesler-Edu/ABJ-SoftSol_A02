@@ -24,9 +24,29 @@ public class HTML_Profile {
 				"		<form method=\"post\">" +
 				"			<input type = \"submit\" name = \"logout\" value = \"Logout\"/>" +
 				"			<input type = \"submit\" name = \"task\" value = \"To Task\"/>" +
+				"			<input type = \"submit\" name = \"delete\" value = \"Delete Account\"/>" +
 				"		</form>" +
 				"	</body>\r\n" + 
 				"</html>";
 		return profilePage;
 	}
+	
+	public static String verifyDelete() {
+		StringBuilder ns = new StringBuilder();
+		ns.append("<html>\r\n" + 
+				"<body>\r\n" + 
+				"<div>\r\n" + 
+				"<h2>Are you sure you wish to delete your account?</h2>\r\n" + 
+				"<form>\r\n" + 
+				"<label for \"pass\">Enter password to delete</label>\r\n" + 
+				"<input type = \"password\" id =\"pass\" name = \"pass\" >\r\n" + 
+				"<input type = \"submit\" name = \"confirmDelete\" value = \"Confirm Delete\">\r\n" + 
+				"</form>\r\n" + 
+				"</div>\r\n" + 
+				"</body>\r\n" + 
+				"</html>");
+		return ns.toString();
+	}
+	
+	
 }

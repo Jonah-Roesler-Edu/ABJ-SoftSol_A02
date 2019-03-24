@@ -140,7 +140,7 @@ public class TaskDBManager {
 		return taskList;
 	}
 	
-	public void updateEmployee(Task uTask) {
+	public void updateTask(Task uTask) {
 
 		// Declare Session Factory
 		SessionFactory fx = null;
