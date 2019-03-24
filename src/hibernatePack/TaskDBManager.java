@@ -140,6 +140,41 @@ public class TaskDBManager {
 		return taskList;
 	}
 	
+	public Task readTask(long taskId) {
+		// Declare Session Factory
+		SessionFactory fx = null;
+		// Declare Session
+		Session sx = null;
+		// Declare Transaction
+		Transaction tx = null;
+
+		Task rTask = null;
+
+		try {
+
+			fx = getFactory();
+			sx = fx.openSession();
+			tx = sx.beginTransaction();
+
+			rTask = sx.get(Task.class, taskId);
+			tx.commit();
+			sx.close();
+			fx.close();
+		} catch (HibernateException e) {
+			if (tx != null) {
+				tx.rollback();
+			}
+			e.printStackTrace();
+		}
+		
+		finally {
+			sx.close();
+			fx.close();
+		}
+
+		return rTask;
+	}
+	
 	public void updateTask(Task uTask) {
 
 		// Declare Session Factory
@@ -154,7 +189,10 @@ public class TaskDBManager {
 			fx = getFactory();
 			sx = fx.openSession();
 			tx = sx.beginTransaction();
-
+			
+			/*Query newQuery = sx.createQuery("from Task where uTask = :id");
+			newQuery.setParameter("id", workerEmail);*/
+			
 			sx.update(uTask);
 			
 			tx.commit();

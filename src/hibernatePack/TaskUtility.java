@@ -26,6 +26,24 @@ public class TaskUtility {
 		
 	}
 	
+	public static Task getTask(long taskId) {
+		TaskDBManager taskDB = new TaskDBManager();
+		Task rTask = taskDB.readTask(taskId);
+		return rTask;
+	}
+	
+	public static void updateTaskStatus(long taskId) {
+		TaskDBManager taskDB = new TaskDBManager();
+		Task updateTask = TaskUtility.getTask(taskId);
+		
+		String status = "Complete";
+		updateTask.setStatus(status);
+		
+		TaskDBManager newDB = new TaskDBManager();
+		newDB.updateTask(updateTask);
+		
+	}
+	
 	public static List getCreatedBy(String email) {
 		TaskDBManager taskDB = new TaskDBManager();
 		return taskDB.listCreatedTasks(email);

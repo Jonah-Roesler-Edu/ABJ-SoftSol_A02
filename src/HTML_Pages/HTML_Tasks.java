@@ -83,7 +83,7 @@ public class HTML_Tasks {
 				"			<form method=\"post\">\r\n" +
 				"            	<p>Id of Task to Change Status</p>\r\n" + 
 				"				<input type = \"text\" name = id>" +
-				"           	<input type=\"button\" name=\"complete\" value=\"Task Completed\">\r\n" +
+				"           	<input type=\"submit\" name=\"complete\" value=\"Task Completed\">\r\n" +
 				"			</form>" +
 				"        </div>\r\n" );
 		

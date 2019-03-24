@@ -40,7 +40,7 @@ public class EmpUtility {
 		Employee dEmployee = EmpUtility.getProfile(email);
 		if(dEmployee.getPass().equals(pass)) {
 			DBManager myDB = new DBManager();
-			myDB.del
+//			myDB.del
 		}
 	}
 	
