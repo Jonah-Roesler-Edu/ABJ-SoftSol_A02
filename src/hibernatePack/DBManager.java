@@ -126,6 +126,37 @@ public class DBManager {
 			fx.close();
 		}
 	}
+	
+	public void deleteEmployee(Employee dEmployee) {
+
+		// Declare Session Factory
+		SessionFactory fx = null;
+		// Declare Session
+		Session sx = null;
+		// Declare Transaction
+		Transaction tx = null;
+
+		try {
+
+			fx = getFactory();
+			sx = fx.openSession();
+			tx = sx.beginTransaction();
+			
+			sx.delete(dEmployee);
+			
+			tx.commit();
+			sx.close();
+			fx.close();
+		} catch (HibernateException e) {
+			if (tx != null) {
+				tx.rollback();
+			}
+			e.printStackTrace();
+		} finally {
+			sx.close();
+			fx.close();
+		}
+	}
 
 	public List listEmployees() {
 

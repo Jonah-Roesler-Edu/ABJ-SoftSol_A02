@@ -52,6 +52,7 @@ public class ProfilePage extends HttpServlet {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 		HttpSession session = request.getSession();
+		PrintWriter out = response.getWriter();
 		
 		if(request.getParameter("logout") != null )
 		{  
@@ -63,11 +64,17 @@ public class ProfilePage extends HttpServlet {
 		  response.sendRedirect("tasks");
 		}
 		if(request.getParameter("delete") != null ) {
-			PrintWriter out = response.getWriter();
+
 			out.println(HTML_Profile.verifyDelete());
 		}
 		if(request.getParameter("confirmDelete") != null ) {
-			
+			if(EmpUtility.deleteProfile((String) session.getAttribute("email"), request.getParameter("pass"))) {
+				session.invalidate();
+				response.sendRedirect("login");
+			}
+			else {
+				out.println("Invalid Password!");
+			}
 		}
 	}
 

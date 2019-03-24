@@ -36,11 +36,15 @@ public class EmpUtility {
 		myDB.createEmployee(newEmployee);
 	}
 	
-	public static void deleteProfile(String email, String pass) {
+	public static boolean deleteProfile(String email, String pass) {
 		Employee dEmployee = EmpUtility.getProfile(email);
 		if(dEmployee.getPass().equals(pass)) {
 			DBManager myDB = new DBManager();
-//			myDB.del
+			myDB.deleteEmployee(dEmployee);
+			return true;
+		}
+		else {
+			return false;
 		}
 	}
 	

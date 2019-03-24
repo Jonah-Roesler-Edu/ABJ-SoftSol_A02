@@ -37,7 +37,7 @@ public class HTML_Profile {
 				"<body>\r\n" + 
 				"<div>\r\n" + 
 				"<h2>Are you sure you wish to delete your account?</h2>\r\n" + 
-				"<form>\r\n" + 
+				"<form method = \"post\">\r\n" + 
 				"<label for \"pass\">Enter password to delete</label>\r\n" + 
 				"<input type = \"password\" id =\"pass\" name = \"pass\" >\r\n" + 
 				"<input type = \"submit\" name = \"confirmDelete\" value = \"Confirm Delete\">\r\n" + 
