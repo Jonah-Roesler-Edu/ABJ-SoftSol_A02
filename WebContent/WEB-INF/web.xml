@@ -41,6 +41,14 @@
     <servlet-name>TaskPage</servlet-name>
     <url-pattern>/tasks</url-pattern>
   </servlet-mapping>
+   <servlet>
+    <servlet-name>MessagePage</servlet-name>
+    <servlet-class>Servlets.MessagePage</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MessagePage</servlet-name>
+    <url-pattern>/messages</url-pattern>
+  </servlet-mapping>
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
     <welcome-file>index.htm</welcome-file>
