@@ -63,6 +63,10 @@ public class ProfilePage extends HttpServlet {
 		{  
 		  response.sendRedirect("tasks");
 		}
+		if(request.getParameter("message") != null )
+		{  
+		  response.sendRedirect("message");
+		}
 		if(request.getParameter("delete") != null ) {
 
 			out.println(HTML_Profile.verifyDelete());

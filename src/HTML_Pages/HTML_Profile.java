@@ -25,6 +25,7 @@ public class HTML_Profile {
 				"			<input type = \"submit\" name = \"logout\" value = \"Logout\"/>" +
 				"			<input type = \"submit\" name = \"task\" value = \"To Task\"/>" +
 				"			<input type = \"submit\" name = \"delete\" value = \"Delete Account\"/>" +
+				"			<input type = \"submit\" name = \"message\" value = \"Send a message\"/>" +
 				"		</form>" +
 				"	</body>\r\n" + 
 				"</html>";

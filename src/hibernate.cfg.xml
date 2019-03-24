@@ -13,5 +13,6 @@
 <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
 <mapping class="hibernatePack.Employee"/>
 <mapping class="hibernatePack.Task"/>
+<mapping class="hibernatePack.Message"/>
 </session-factory>
 </hibernate-configuration>
