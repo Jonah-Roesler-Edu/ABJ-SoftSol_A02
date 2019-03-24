@@ -65,7 +65,8 @@ public class TaskPage extends HttpServlet {
 		String workerEmail = request.getParameter("email");
 		String taskDesc = request.getParameter("txtTask");
 		String dueDate = request.getParameter("dueDate");
-		String id = request.getParameter("id");
+		String uId = request.getParameter("updateId");
+		String dId = request.getParameter("deleteId");
 		
 		if(request.getParameter("create") != null) {
 			TaskUtility.createTask(email, workerEmail, dueDate, taskDesc);
@@ -73,8 +74,13 @@ public class TaskPage extends HttpServlet {
 		
 		if(request.getParameter("complete") != null )
 		{  
-			long taskID = Long.parseLong(id);
+			long taskID = Long.parseLong(uId);
 			TaskUtility.updateTaskStatus(taskID);
+		}
+		if(request.getParameter("delete") != null )
+		{  
+			long taskID = Long.parseLong(dId);
+			TaskUtility.deleteTaskStatus(taskID);
 		}
 		if(request.getParameter("profile") != null) {
 			response.sendRedirect("profile");

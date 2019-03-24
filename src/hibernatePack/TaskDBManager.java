@@ -190,10 +190,37 @@ public class TaskDBManager {
 			sx = fx.openSession();
 			tx = sx.beginTransaction();
 			
-			/*Query newQuery = sx.createQuery("from Task where uTask = :id");
-			newQuery.setParameter("id", workerEmail);*/
-			
 			sx.update(uTask);
+			
+			tx.commit();
+			sx.close();
+			fx.close();
+		} catch (HibernateException e) {
+			if (tx != null) {
+				tx.rollback();
+			}
+			e.printStackTrace();
+		} finally {
+			sx.close();
+			fx.close();
+		}
+	}
+	public void deleteTask(Task dTask) {
+
+		// Declare Session Factory
+		SessionFactory fx = null;
+		// Declare Session
+		Session sx = null;
+		// Declare Transaction
+		Transaction tx = null;
+
+		try {
+
+			fx = getFactory();
+			sx = fx.openSession();
+			tx = sx.beginTransaction();
+			
+			sx.delete(dTask);
 			
 			tx.commit();
 			sx.close();

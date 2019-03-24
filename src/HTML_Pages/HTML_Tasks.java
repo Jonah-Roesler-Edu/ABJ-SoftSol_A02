@@ -25,6 +25,7 @@ public class HTML_Tasks {
 		
 		tt.append("<Table>");
 		tt.append("    <tr>\r\n" + 
+				"        <th>Task Id</th>\r\n" + 
 				"        <th>Created By</th>\r\n" + 
 				"        <th>Assigned to:</th>\r\n" +
 				"        <th>Assigned on</th>\r\n" + 
@@ -35,6 +36,7 @@ public class HTML_Tasks {
 		for(Object newTask : createdTasks) {
 			//((Task) newTask).getCreator()
 			tt.append("    <tr>\r\n" + 
+					"        <td>"+ ((Task) newTask).getId() +"</td>\r\n" + 
 					"        <td>"+ ((Task) newTask).getCreator() +"</td>\r\n" + 
 					"        <td>" + ((Task) newTask).getWorker() + "</td>\r\n" + 
 					"        <td>" + ((Task) newTask).getDateAssign() + "</td>\r\n" + 
@@ -45,7 +47,11 @@ public class HTML_Tasks {
 		}
 		tt.append("</Table>");
 		tt.append("            <br>\r\n" + 
-				"            <input type=\"button\" name=\"delete\" value=\"Delete Task\">\r\n" + 
+				"			<form method=\"post\">\r\n" +
+				"            	<p>Id of Task to delete</p>\r\n" + 
+				"				<input type = \"text\" name = deleteId>" +
+				"           	<input type=\"submit\" name=\"delete\" value=\"Delete Task\">\r\n" +
+				"			</form>" +
 				"        </div>\r\n" );
 		
 		return tt.toString();
@@ -82,7 +88,7 @@ public class HTML_Tasks {
 		tt.append("            <br>\r\n" + 
 				"			<form method=\"post\">\r\n" +
 				"            	<p>Id of Task to Change Status</p>\r\n" + 
-				"				<input type = \"text\" name = id>" +
+				"				<input type = \"text\" name = updateId>" +
 				"           	<input type=\"submit\" name=\"complete\" value=\"Task Completed\">\r\n" +
 				"			</form>" +
 				"        </div>\r\n" );
