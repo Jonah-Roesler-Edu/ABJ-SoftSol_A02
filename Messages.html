@@ -3,6 +3,7 @@
 	<head>
 		<meta charset="ISO-8859-1">
 		<title>Messages</title>
+		<script type="text/javascript" src="check.js"></script>
 	</head>
 	<body>
 		<div>
@@ -10,17 +11,21 @@
 		</div>
 		
 		<div style="height:300px;width:50%;border:1px solid #ccc;overflow:auto;">
-			<p> 
+			<p id = "result"> 
 				The quick brown fox jumps over the lazy dog The quick brown fox jumps over the lazy dog
 				The quick brown fox jumps over the lazy dog The quick brown fox jumps over the lazy dog
 				The quick brown fox jumps over the lazy dog The quick brown fox jumps over the lazy dog
 			</p>
 		</div>
-		<div>
+
+
+		<div id = "list">
 		<form method = "post">
-			<textarea id='h' style="width: 50%; height: 10%;"></textarea>
-			<input style="display: none" type="text" id="u" value="username">
-			<input type="button" value="send" onclick="addText()" />
+			<div id = "content">
+				<textarea id='h' style="width: 50%; height: 10%;"></textarea>
+				<input style="display: none" type="text" id="u" value="username">
+				<input type="button" value="send" onclick="addText()" />
+			</div>
 		</form>
 
 		</div>

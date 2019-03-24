@@ -56,11 +56,7 @@ function reloaddata()
             document.getElementById("content").innerHTML = xmlhttp.responseText;
             olist = document.getElementById('list'); //everything in id list
             olist.scrollTop = olist.scrollHeight;
-
-
         }
-
-
     }
     xmlhttp.send(null);
 
