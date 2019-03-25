@@ -25,39 +25,10 @@ public static String writeHead(String email) {
 			"	<head>\r\n" + 
 			"		<meta charset=\"ISO-8859-1\">\r\n" + 
 			"		<title>Messages</title>\r\n" + 
-			"		<script > function addText()\r\n" + 
-			"{\r\n" + 
-			"    var username = " + email + ";" +  
-			"    var msg = document.getElementById('h').value;\r\n" + 
-			"    olist = document.getElementById('list');\r\n" + 
-			"    op = document.createElement('p');\r\n" + 
-			"    op.innerHTML = username + \" - <g>\" + msg + \"</g>\";\r\n" + 
-			"    ocontent = document.getElementById('content');\r\n" + 
-			"    ocontent.appendChild(op);             //Add new line on click\r\n" + 
-			"    olist.scrollTop = olist.scrollHeight; //Adjust Height\r\n" + 
-			"    document.getElementById('h').value = '';\r\n" + 
-			"    var xmlhttp;\r\n" + 
-			"    if (window.XMLHttpRequest)\r\n" + 
-			"    {// code for IE7+, Firefox, Chrome, Opera, Safari\r\n" + 
-			"        xmlhttp = new XMLHttpRequest();\r\n" + 
-			"    }\r\n" + 
-			"    else\r\n" + 
-			"    {// code for IE6, IE5\r\n" + 
-			"        xmlhttp = new ActiveXObject(\"Microsoft.XMLHTTP\");\r\n" + 
-			"    }\r\n" + 
-			"\r\n" + 
-			"    xmlhttp.open(\"POST\", \"chatstore?uname=\" + username + \"&msg=\" + msg, true);\r\n" + 
-			"\r\n" + 
-			"    xmlhttp.onreadystatechange = function()\r\n" + 
-			"    {\r\n" + 
-			"        if (xmlhttp.readyState == 4 && xmlhttp.status == 200)\r\n" + 
-			"        {\r\n" + 
-			"            document.getElementById(\"result\").innerHTML = 'sent';\r\n" + 
-			"            document.getElementById(\"result\").innerHTML = '';\r\n" + 
-			"        }\r\n" + 
-			"    }\r\n" + 
-			"    xmlhttp.send(null);\r\n" + 
-			"}</script>\r\n" + 
+			"		<script type='text/javascript' src='check.js'></script>" +
+			"		<script>\r\n" + 
+			"     		setInterval(reloaddata, 3000);\r\n" + 
+			"   	 </script>"+
 			"	</head>\r\n" + 
 			"	<body>\r\n" + 
 			"		<div>\r\n" + 

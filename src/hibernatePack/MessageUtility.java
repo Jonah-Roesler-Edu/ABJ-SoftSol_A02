@@ -14,4 +14,9 @@ public class MessageUtility {
 		MessageDBManager newDB = new MessageDBManager();
 		newDB.createMessage(newMessage);
 	}
+	
+	public static List getMessages() {
+		MessageDBManager messageDB = new MessageDBManager();
+		return messageDB.listMessages();
+	}
 }

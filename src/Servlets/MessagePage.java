@@ -2,6 +2,7 @@ package Servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -39,6 +40,9 @@ public class MessagePage extends HttpServlet {
 		String email = (String) session.getAttribute("email");
 		
 		out.println(HTML_Messages.writeHead(email));
+		
+		List m = MessageUtility.getMessages();
+		Object[] messages = m.toArray(); 
 	}
 
 	/**
