@@ -64,7 +64,7 @@ public static String writeHead(String email) {
 		for(Object message : messages) {
 			sm.append("			<div>\r\n" + 
 					"			<p> " + ((Message) message).getPosterEmail() + " : " +"</p>\r\n" + 
-					"			<p> " + ((Message) message).getMessage() + "</p>\r\n" + 
+					"			<p> " + ((Message) message).getMessage() + " - " + ((Message) message).getDate() + "</p>\r\n" + 
 					"			</div>");
 		}
 		sm.append("		</div>");		
