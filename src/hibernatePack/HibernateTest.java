@@ -85,8 +85,6 @@ public class HibernateTest {
 		//List newList = TaskUtility.getCreatedBy("Hello");
 		
 		
-
-		
 	}
 
 }

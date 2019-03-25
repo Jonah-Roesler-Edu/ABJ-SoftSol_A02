@@ -25,6 +25,7 @@ public class HTML_Profile {
 				"			<input type = \"submit\" name = \"logout\" value = \"Logout\"/>" +
 				"			<input type = \"submit\" name = \"task\" value = \"To Task\"/>" +
 				"			<input type = \"submit\" name = \"delete\" value = \"Delete Account\"/>" +
+				"			<input type = \"submit\" name = \"update\" value = \"update account\"/>" +
 				"			<input type = \"submit\" name = \"message\" value = \"Send a message\"/>" +
 				"		</form>" +
 				"	</body>\r\n" + 
@@ -45,6 +46,35 @@ public class HTML_Profile {
 				"</form>\r\n" + 
 				"</div>\r\n" + 
 				"</body>\r\n" + 
+				"</html>");
+		return ns.toString();
+	}
+	
+	public static String verifyUpdate(Employee uEmployee) {
+		StringBuilder ns = new StringBuilder();
+		ns.append("<html>\r\n" + 
+				"	<body>\r\n" + 
+				"		<div>\r\n" + 
+				"		<h2>Are you sure you wish to edit your account information?</h2>\r\n" + 
+				"			<form method=\"post\">\r\n" + 
+				"				First Name:<br>\r\n" + 
+				"				<input type=\"text\" name=\"firstname\" value=\" "+ uEmployee.getFName() +" \">\r\n" + 
+				"				<br>\r\n" + 
+				"				Last Name:<br>\r\n" + 
+				"				<input type=\"text\" name=\"lastname\" value=\" "+ uEmployee.getLName() +" \">\r\n" + 
+				"				<br>\r\n" + 
+				"				Phone:<br>\r\n" + 
+				"				<input type=\"text\" name=\"phone\" value=\" "+ uEmployee.getPhone() + " \">\r\n" + 
+				"				<br>\r\n" + 
+				"				Address:<br>\r\n" + 
+				"				<input type=\"text\" name=\"address\" value=\" "+ uEmployee.getAddress() +" \">\r\n" + 
+				"				<br>\r\n" + 
+				"				<label for \"uPass\">Enter password to update</label>\r\n" + 
+				"				<input type = \"password\" id =\"uPass\" name = \"uPass\" >\r\n" + 
+				"				<input type=\"submit\" name = \"confirmUpdate\" value=\"Confirm update\">\r\n" + 
+				"			</form>\r\n" + 
+				"		</div>\r\n" + 
+				"	</body>\r\n" + 
 				"</html>");
 		return ns.toString();
 	}

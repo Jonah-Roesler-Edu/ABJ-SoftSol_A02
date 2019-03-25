@@ -53,6 +53,7 @@ public class ProfilePage extends HttpServlet {
 		doGet(request, response);
 		HttpSession session = request.getSession();
 		PrintWriter out = response.getWriter();
+		String email = (String) session.getAttribute("email");
 		
 		if(request.getParameter("logout") != null )
 		{  
@@ -75,6 +76,27 @@ public class ProfilePage extends HttpServlet {
 			if(EmpUtility.deleteProfile((String) session.getAttribute("email"), request.getParameter("pass"))) {
 				session.invalidate();
 				response.sendRedirect("login");
+			}
+			else {
+				out.println("Invalid Password!");
+			}
+		}
+		if(request.getParameter("update") != null ) {
+
+			Employee profileEmployee = EmpUtility.getProfile(email);
+			out.println(HTML_Profile.verifyUpdate(profileEmployee));
+		}
+		if(request.getParameter("confirmUpdate") != null ) {
+			String firstname = request.getParameter("firstname");
+			String lastname = request.getParameter("lastname");
+			String address = request.getParameter("address");
+			String phone = request.getParameter("phone");
+			String pass = request.getParameter("uPass");
+			
+
+			if(EmpUtility.updateProfile(email, firstname, lastname, pass, address, phone)) {
+				response.sendRedirect("profile");
+				out.println("Information changed!");
 			}
 			else {
 				out.println("Invalid Password!");

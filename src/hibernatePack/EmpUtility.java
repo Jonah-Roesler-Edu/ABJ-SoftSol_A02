@@ -48,5 +48,23 @@ public class EmpUtility {
 		}
 	}
 	
+	public static boolean updateProfile(String email, String fName, String lName,String pass, String address, String phone) {
+		Employee uEmployee = EmpUtility.getProfile(email);
+		if(uEmployee.getPass().equals(pass)) {
+			
+			uEmployee.setFName(fName);
+			uEmployee.setLName(lName);
+			uEmployee.setAddress(address);
+			uEmployee.setPhone(phone);
+			
+			DBManager myDB = new DBManager();
+			myDB.updateEmployee(uEmployee);
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+	
 	
 }
