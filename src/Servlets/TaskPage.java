@@ -70,17 +70,20 @@ public class TaskPage extends HttpServlet {
 		
 		if(request.getParameter("create") != null) {
 			TaskUtility.createTask(email, workerEmail, dueDate, taskDesc);
+			response.sendRedirect("tasks");
 		}
 		
 		if(request.getParameter("complete") != null )
 		{  
 			long taskID = Long.parseLong(uId);
 			TaskUtility.updateTaskStatus(taskID);
+			response.sendRedirect("tasks");
 		}
 		if(request.getParameter("delete") != null )
 		{  
 			long taskID = Long.parseLong(dId);
 			TaskUtility.deleteTaskStatus(taskID);
+			response.sendRedirect("tasks");
 		}
 		if(request.getParameter("profile") != null) {
 			response.sendRedirect("profile");
