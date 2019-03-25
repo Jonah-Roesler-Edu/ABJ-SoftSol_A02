@@ -39,10 +39,15 @@ public class MessagePage extends HttpServlet {
 		HttpSession session = request.getSession();
 		String email = (String) session.getAttribute("email");
 		
-		out.println(HTML_Messages.writeHead(email));
+
 		
 		List m = MessageUtility.getMessages();
 		Object[] messages = m.toArray(); 
+		
+		out.println(HTML_Messages.writeHead(email));
+		out.println(HTML_Messages.writeMessages(messages));
+		out.println(HTML_Messages.writeFormBox());
+		
 	}
 
 	/**
@@ -58,6 +63,7 @@ public class MessagePage extends HttpServlet {
 		
 		MessageUtility.createMessage(message, email);
 		System.out.println("Saving the message " + message + " !");
+		response.sendRedirect("message");
 		
 	}
 

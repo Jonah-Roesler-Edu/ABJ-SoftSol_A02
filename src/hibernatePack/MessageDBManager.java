@@ -112,7 +112,7 @@ public class MessageDBManager {
 			sx = fx.openSession();
 			tx = sx.beginTransaction();
 			
-			Query newQuery = sx.createQuery("from message");
+			Query newQuery = sx.createQuery("from Message");
 			
 			messages = newQuery.getResultList();
 
