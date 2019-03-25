@@ -62,11 +62,11 @@ public class Employee {
 	}
 	@Override
 	public String toString() {
-	return "Person{Email:" + getEmail()
-	+ ";Name: " + getFName() + " " + getLName()
-	+ ";Password:" + getPass()
-	+ ";Address:" + getAddress()
-	+ ";Phone:" + getPhone() + "}";
+	return "Person{ Email:" + getEmail()
+	+ "; Name: " + getFName() + " " + getLName()
+	+ "; Password:" + getPass()
+	+ "; Address:" + getAddress()
+	+ "; Phone:" + getPhone() + " }";
 	}
 
 }
