@@ -50,8 +50,10 @@ public class MessagePage extends HttpServlet {
 		
 		HttpSession session = request.getSession();
 		String email = (String) session.getAttribute("email");
-		String message = request.getParameter("h");
+		String message = request.getParameter("h1");
+		
 		MessageUtility.createMessage(message, email);
+		System.out.println("Saving the message " + message + " !");
 		
 	}
 

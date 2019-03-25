@@ -73,9 +73,9 @@ public static String writeHead(String email) {
 			"		<div id = \"list\">\r\n" + 
 			"		<form method = \"post\">\r\n" + 
 			"			<div id = \"content\">\r\n" + 
-			"				<textarea id='h' style=\"width: 50%; height: 10%;\"></textarea>\r\n" + 
+			"				<textarea id='h' name='h1' style=\"width: 50%; height: 10%;\"></textarea>\r\n" + 
 			"				<input style=\"display: none\" type=\"text\" id=\"u\" value=\"username\">\r\n" + 
-			"				<input type=\"button\" value=\"send\" onclick=\"addText()\" />\r\n" + 
+			"				<input type=\"submit\" value=\"send\" onclick=\"addText()\" />\r\n" + 
 			"			</div>\r\n" + 
 			"		</form>\r\n" + 
 			"\r\n" + 
